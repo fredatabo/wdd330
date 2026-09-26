@@ -1,0 +1,1 @@
+function o(t){if(t.ok)return t.json();throw new Error("Bad Response")}const e="https://wdd330-backend-osp8.onrender.com/";class r{async getData(a){const s=await fetch(`${e}products/search/${a}`);return(await o(s)).Result}async findProductById(a){const s=await fetch(`${e}product/${a}`);return(await o(s)).Result}}export{r as P};
