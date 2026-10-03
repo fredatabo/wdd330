@@ -1,4 +1,4 @@
-import{q as e,s as o,b as i,l as s,a as c}from"./utils-DPPyhCZV.js";import{P as n}from"./ProductData-CnzLtmUG.js";function l(t){var d,r;const a=((r=(d=t.Colors)==null?void 0:d[0])==null?void 0:r.ColorName)??"";return`<h3>${t.Brand.Name}</h3>
+import{q as e,s as o,b as i,l as s,a as c}from"./utils-DPPyhCZV.js";import{P as n}from"./ProductData-xT122wIH.js";function l(t){var d,r;const a=((r=(d=t.Colors)==null?void 0:d[0])==null?void 0:r.ColorName)??"";return`<h3>${t.Brand.Name}</h3>
 
     <h2 class="divider">${t.NameWithoutBrand}</h2>
 
