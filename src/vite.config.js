@@ -20,12 +20,7 @@ export default defineConfig(({ command }) => ({
   root: "src",
   publicDir: "public",
   build: {
-    // GitHub Pages, when set to "Deploy from a branch", can only serve
-    // from the branch's root or its /docs folder -- it can't reach an
-    // arbitrary /dist folder. Building into docs/ (committed alongside
-    // your source) lets you point Pages straight at this branch.
-    outDir: "../docs",
-    emptyOutDir: true,
+    outDir: "../dist",
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),

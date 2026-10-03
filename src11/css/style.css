@@ -221,11 +221,25 @@ button {
 
 /* Styles for product lists */
 .product-card {
+  position: relative;
   flex: 1 1 45%;
   margin: 0.25em;
   padding: 0.5em;
   border: 1px solid var(--light-grey);
   max-width: 250px;
+}
+
+.product-card__discount {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background-color: var(--tertiary-color);
+  color: white;
+  font-size: var(--small-font);
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  z-index: 1;
 }
 
 .product-card h2,
@@ -311,74 +325,4 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
-}
-
-/* Quick view button + modal */
-.product-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.quick-view-btn {
-  margin-top: auto;
-  width: 100%;
-  padding: 0.4em 1em;
-  font-size: var(--small-font);
-  background-color: var(--tertiary-color);
-}
-
-.quick-view-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.quick-view {
-  position: fixed;
-  inset: 0;
-  margin: auto;
-  width: min(90vw, 500px);
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 1.5rem 1rem 1rem;
-  border: 2px solid var(--primary-color);
-  border-radius: 8px;
-}
-
-.quick-view::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.quick-view img {
-  width: 100%;
-}
-
-.quick-view h2,
-.quick-view h3 {
-  margin: 0.5em 0;
-}
-
-.quick-view__close {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
-  padding: 0 0.4em;
-  background: none;
-  color: var(--dark-grey);
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.quick-view__actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.quick-view__actions button {
-  margin: 0;
-}
-
-.quick-view__details {
-  color: var(--tertiary-color);
 }

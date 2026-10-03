@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Outside | Product Listing</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="../js/product-listing.js"></script>
+  </head>
+
+  <body>
+    <header id="main-header" class="divider"></header>
+
+    <main class="divider">
+      <section class="products">
+        <h2>Top Products</h2>
+
+        <div class="products-sort">
+          <label for="sort">Sort by:</label>
+          <select id="sort" name="sort">
+            <option value="">Featured</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+
+        <ul class="product-list"></ul>
+      </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+  </body>
+</html>
