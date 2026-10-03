@@ -21,3 +21,23 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+
+// render a list of items into a parent element using a template function.
+// templateFn: a function that takes one item and returns an HTML string.
+// parentElement: the DOM node the generated markup is inserted into.
+// list: the array of data items to render.
+// position: where insertAdjacentHTML should place the markup (defaults to "afterbegin").
+// clear: when true (default), empties the parent element before rendering.
+export function renderListWithTemplate(
+  templateFn,
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = true,
+) {
+  const htmlStrings = list.map(templateFn);
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}

@@ -1,21 +1,5 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
-// Returns a "X% off" discount badge when a product's FinalPrice is lower
-// than its SuggestedRetailPrice, or an empty string when there's no
-// discount to show. Keeping this as its own function makes the markup
-// easy to scan and the percentage math easy to test/adjust on its own.
-function discountBadge(product) {
-  const original = product.SuggestedRetailPrice;
-  const current = product.FinalPrice;
-
-  if (!original || original <= current) {
-    return "";
-  }
-
-  const percentOff = Math.round(((original - current) / original) * 100);
-  return `<span class="product-card__discount">${percentOff}% off</span>`;
-}
-
 // Builds the markup for a single product card.
 // Kept as one small function (instead of hand-written HTML in main.js)
 // so the ProductList class only has to know "how to get a string of HTML
@@ -23,7 +7,6 @@ function discountBadge(product) {
 function productCardTemplate(product) {
   return `<li class="product-card">
     <a href="product_pages/index.html?product=${product.Id}">
-      ${discountBadge(product)}
       <img
         src="${product.Image.replace("../", "")}"
         alt="Image of the ${product.Name}"

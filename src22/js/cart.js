@@ -4,13 +4,13 @@ import { getLocalStorage, renderListWithTemplate, qs } from "./utils.mjs";
 function cartItemTemplate(item) {
   const colorName = item.Colors?.[0]?.ColorName ?? "";
   return `<li class="cart-card divider">
-  <a href="product_pages/index.html?product=${item.Id}" class="cart-card__image">
+  <a href="../product_pages/index.html?product=${item.Id}" class="cart-card__image">
     <img
-      src="${item.Image.replace("../", "")}"
+      src="${item.Image}"
       alt="${item.Name}"
     />
   </a>
-  <a href="product_pages/index.html?product=${item.Id}">
+  <a href="../product_pages/index.html?product=${item.Id}">
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${colorName}</p>
@@ -37,18 +37,14 @@ function renderCartContents() {
   const cartItems = getLocalStorage("so-cart") || [];
   const listElement = qs(".product-list");
 
-  const checkoutButton = qs(".btn-checkout");
-
   if (cartItems.length === 0) {
     listElement.innerHTML = `<li class="cart-empty">Your cart is empty.</li>`;
     renderCartTotal(cartItems);
-    if (checkoutButton) checkoutButton.style.display = "none";
     return;
   }
 
   renderListWithTemplate(cartItemTemplate, listElement, cartItems);
   renderCartTotal(cartItems);
-  if (checkoutButton) checkoutButton.style.display = "";
 }
 
 renderCartContents();
